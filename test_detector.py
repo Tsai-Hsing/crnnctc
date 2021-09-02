@@ -64,7 +64,7 @@ class test_detector:
                     'ErrorMsg':'',
                     'result':returnarr
             }
-            return returnval
+            return json.dumps(returnval)
         except:
             returnval = {
                     'isSuccess': 'false',
