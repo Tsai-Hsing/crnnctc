@@ -36,7 +36,7 @@ def mainPredict(image, path, modelName, userDict , graph, sess):
     try:
         list_Result = []
         valid_img = []
-        image.save(path + '/original.' + image.format.lower())
+        image.save(path + '/original.' + userDict["FileExtension"]#image.format.lower())
         img = cv2.cvtColor(cv2.imread(path + '/original.' + image.format.lower()), cv2.COLOR_BGR2GRAY)
         
         #print('./' + str(sys.argv[2]))
