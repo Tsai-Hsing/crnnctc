@@ -36,8 +36,8 @@ def mainPredict(image, path, modelName, userDict , graph, sess):
     try:
         list_Result = []
         valid_img = []
-        image.save(path + '/original.' + userDict["FileExtension"]#image.format.lower())
-        img = cv2.cvtColor(cv2.imread(path + '/original.' + image.format.lower()), cv2.COLOR_BGR2GRAY)
+        image.save(path + '/original.' + userDict["FileExtension"])#image.format.lower())
+        img = cv2.cvtColor(cv2.imread(path + '/original.' + userDict['FileExtension']), cv2.COLOR_BGR2GRAY)
         
         #print('./' + str(sys.argv[2]))
         # convert each image of shape (32, 128, 1)
@@ -70,7 +70,7 @@ def mainPredict(image, path, modelName, userDict , graph, sess):
         for str in list_Result:
             tmparr = str.replace("['",'').replace("']",'').split(' ')
             tmpval = {
-                'value':tmparr[0]
+                'Value':tmparr[0]
             }
             returnarr.append(tmpval)
         data['result'] = returnarr
