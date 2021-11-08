@@ -70,7 +70,9 @@ def mainPredict(image, path, modelName, userDict , graph, sess):
         for str in list_Result:
             tmparr = str.replace("['",'').replace("']",'').split(' ')
             tmpval = {
-                'Value':tmparr[0]
+                'score':'',
+                'BoundingBox':[]
+                'Value':[tmparr[0]]
             }
             returnarr.append(tmpval)
         data['result'] = returnarr
